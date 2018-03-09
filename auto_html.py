@@ -15,21 +15,28 @@ def html_head():
 
 def html_body():
     text2html = """ """
-    text2html = text2html + """<tr>"""
-    for i in range(10):
-        text2html = text2html + """<td>"""
-        j = i+1
-        text2html = text2html + str(j)
-        if j == 1:
-            text2html = text2html +"st"
-        elif j == 2:
-            text2html = text2html +"nd"
-        elif j == 3:
-            text2html = text2html +"rd"
-        else:
-            text2html = text2html +"th"
-        text2html = text2html + """</td>"""
-    text2html = text2html + """</tr>"""
+    for j in range(2):
+        text2html = text2html + """<tr>"""
+        for i in range(10):
+            zahlenvergleich = j*10+i
+            text2html = text2html + """<td>"""
+            text2html = text2html + str(zahlenvergleich) #Zahl wird hinzugefügt
+            if i == 1:
+                text2html = text2html +"st"
+            elif i == 2:
+                text2html = text2html +"nd"
+            elif i == 3:
+                text2html = text2html +"rd"
+            elif i == 11:
+                text2html = text2html +"th"
+            elif i == 12:
+                text2html = text2html +"th"
+            elif i == 13:
+                text2html = text2html +"th"
+            else:
+                text2html = text2html +"th"
+            text2html = text2html + """</td>"""
+        text2html = text2html + """</tr>"""
     return text2html
 
 def html_foot():
