@@ -7,35 +7,34 @@ def html_head():
 <title>Table of enumerations</title>
 </head>
 <body>
-<h3>The table of enumerations from 1st to 1,000,000th</h3>
-###UNDER CONSTRUCTION!###<br>
-<table border="1" width="1000">
+<h3>The table of enumerations from 1th to 1,000th</h3>
+<table border="5" bgcolor="#070707" width="750">
 <tbody>"""
     return text2html
 
 def html_body():
     text2html = """ """
-    for j in range(2):
+    for x in range(100):
         text2html = text2html + """<tr>"""
-        for i in range(10):
-            zahlenvergleich = j*10+i
-            text2html = text2html + """<td>"""
+        for y in range(1, 11):
+            zahlenvergleich = x*10+y
+            text2html = text2html + """<td align="center"><font color="#00FF00"> """
             text2html = text2html + str(zahlenvergleich) #Zahl wird hinzugefügt
-            if i == 1:
+            if (x == 1) and (y == 1):
+                text2html = text2html +"""</font>"""+"""<font color="#FF0000">"""+"th"+"""</font>"""
+            elif (x == 1) and (y == 2):
+                text2html = text2html +"""</font>"""+"""<font color="#FF0000">"""+"th"+"""</font>"""
+            elif (x == 1) and (y == 3):
+                text2html = text2html +"""</font>"""+"""<font color="#FF0000">"""+"th"+"""</font>"""
+            elif y == 1:
                 text2html = text2html +"st"
-            elif i == 2:
+            elif y == 2:
                 text2html = text2html +"nd"
-            elif i == 3:
+            elif y == 3:
                 text2html = text2html +"rd"
-            elif i == 11:
-                text2html = text2html +"th"
-            elif i == 12:
-                text2html = text2html +"th"
-            elif i == 13:
-                text2html = text2html +"th"
             else:
                 text2html = text2html +"th"
-            text2html = text2html + """</td>"""
+        text2html = text2html + """</td>"""
         text2html = text2html + """</tr>"""
     return text2html
 
