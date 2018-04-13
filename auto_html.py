@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 import sys, os, glob
 import lib.html_module as html
+import lib.mysys as msys
 
-def create_file(head, body, foot):
-    f = open("Table_of_enumerations.html", "w")
-    f.write(head+body+foot)
-    f.close
+def main():
+    text = html.head() + html.body() + html.foot()
+    filename = "C:/Users/Daniel/Git/py2html_ordnungszahlen/Table_of_enumerations.html"
+    msys.create_file(text, filename)
+
 
 if __name__=="__main__":
-    head = html.head()
-    body = html.body()
-    foot = html.foot()
-    create_file(head,body,foot)
+    main()
